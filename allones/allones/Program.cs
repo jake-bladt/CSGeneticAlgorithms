@@ -10,6 +10,8 @@ namespace allones
     {
         static void Main(string[] args)
         {
+            var galgo = new GeneticAlgorithm(10, 0.01, 0.95, 0);
+
         }
     }
 }
