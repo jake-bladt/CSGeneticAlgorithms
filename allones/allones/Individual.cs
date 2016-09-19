@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace allones
 {
@@ -27,6 +28,10 @@ namespace allones
             }
         }
 
+        public override string ToString()
+        {
+            return String.Join(String.Empty, Chromosomes);
+        }
 
     }
 }
