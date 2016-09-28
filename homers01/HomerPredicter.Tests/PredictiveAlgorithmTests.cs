@@ -11,10 +11,10 @@ namespace HomerPredicter.Tests
 {
     public class PredictiveAlgorithmTests
     {
-        static double[] OnlyLastYear = [1.0, 0.0, 0.0];
-        static double[] EquallyImportant = [1.0, 1.0, 1.0];
-        static double[] PrettyImportant = [1.0, 0.9, 0.8];
-        static double[] NotVeryImportant = [1.0, 0.5, 0.25];
+        static double[] OnlyLastYear = new double[] { 1.0, 0.0, 0.0 };
+        static double[] EquallyImportant = new double[] { 1.0, 1.0, 1.0 };
+        static double[] PrettyImportant = new double[] { 1.0, 0.9, 0.8 };
+        static double[] NotVeryImportant = new double[] { 1.0, 0.5, 0.25 };
 
         static PlayerBattingStatisticsByYear SteadyPower = null;
         static PlayerBattingStatisticsByYear NeverHomers = null;
@@ -70,11 +70,12 @@ namespace HomerPredicter.Tests
             };
         }
 
-
         [Fact]
-        public void TestMethod1()
+        public void TestRookieOnSingleYear()
         {
-            true.ShouldBeTrue();
+            var algo = new PredictiveAlgorithm(OnlyLastYear);
+            var hrs = algo.PredictHomerunsForYear(2016, Rookie);
+            hrs.ShouldBe(20.0, 0.01);
         }
     }
 }
