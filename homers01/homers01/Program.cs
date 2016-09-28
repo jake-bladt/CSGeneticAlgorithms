@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
+using System.IO;
 
 namespace homers01
 {
@@ -10,6 +8,16 @@ namespace homers01
     {
         static void Main(string[] args)
         {
+            var battingStatsPath = Path.Combine("stats", "Batting.csv");
+            var currentYear = Int32.Parse(ConfigurationManager.AppSettings["homers.mostCurrentYear"]);
+            var yearsBack = Int32.Parse(ConfigurationManager.AppSettings["homers.yearsBack"]);
+
+            var battingReader = new CsvBattingStatsReader();
+            var battingStats = battingReader.GetBattingStatistics(battingStatsPath, currentYear, yearsBack);
+            var statCount = battingStats.ToArray().Length;
+            Console.WriteLine(String.Format("{0} stat lines found."), statCount.ToString("#,##0"));
+
+            Console.ReadLine();
         }
     }
 }
