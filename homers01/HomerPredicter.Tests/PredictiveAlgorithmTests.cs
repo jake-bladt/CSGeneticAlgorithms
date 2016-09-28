@@ -16,10 +16,11 @@ namespace HomerPredicter.Tests
         static double[] PrettyImportant = new double[] { 1.0, 0.9, 0.8 };
         static double[] NotVeryImportant = new double[] { 1.0, 0.5, 0.25 };
 
+        static PlayerBattingStatisticsByYear Rookie = null;
         static PlayerBattingStatisticsByYear SteadyPower = null;
         static PlayerBattingStatisticsByYear NeverHomers = null;
         static PlayerBattingStatisticsByYear ErraticPower = null;
-        static PlayerBattingStatisticsByYear Rookie = null;
+        static PlayerBattingStatisticsByYear UpAndComing = null;
 
         static PredictiveAlgorithmTests()
         {
@@ -63,11 +64,24 @@ namespace HomerPredicter.Tests
                 BattingByYear = new Dictionary<int, BattingStatistics>
                 {
                     { 2013, new BattingStatistics { HomeRuns = 17 } },
-                    { 2014, new BattingStatistics { HomeRuns = 51 } },
+                    { 2014, new BattingStatistics { HomeRuns = 49 } },
                     { 2015, new BattingStatistics { HomeRuns = 33 } },
                     { 2016, new BattingStatistics { HomeRuns = 33 } }
                 }
             };
+
+            UpAndComing = new PlayerBattingStatisticsByYear
+            {
+                PlayerInformation = new PlayerInfo { Key = "STEADY" },
+                BattingByYear = new Dictionary<int, BattingStatistics>
+                {
+                    { 2013, new BattingStatistics { HomeRuns = 10 } },
+                    { 2014, new BattingStatistics { HomeRuns = 20 } },
+                    { 2015, new BattingStatistics { HomeRuns = 30 } },
+                    { 2016, new BattingStatistics { HomeRuns = 40 } }
+                }
+            };
+
         }
 
         [Fact]
@@ -100,6 +114,38 @@ namespace HomerPredicter.Tests
             var algo = new PredictiveAlgorithm(NotVeryImportant);
             var hrs = algo.PredictHomerunsForYear(2016, Rookie);
             hrs.ShouldBe(20.0, 0.01);
+        }
+
+        [Fact]
+        public void TestNoPowerOnSingleYear()
+        {
+            var algo = new PredictiveAlgorithm(OnlyLastYear);
+            var hrs = algo.PredictHomerunsForYear(2016, NeverHomers);
+            hrs.ShouldBe(0.0, 0.01);
+        }
+
+        [Fact]
+        public void TestNoPowerOnEqualWeighting()
+        {
+            var algo = new PredictiveAlgorithm(EquallyImportant);
+            var hrs = algo.PredictHomerunsForYear(2016, NeverHomers);
+            hrs.ShouldBe(0.0, 0.01);
+        }
+
+        [Fact]
+        public void TestNoPowerOnPrettyImportant()
+        {
+            var algo = new PredictiveAlgorithm(PrettyImportant);
+            var hrs = algo.PredictHomerunsForYear(2016, NeverHomers);
+            hrs.ShouldBe(0.0, 0.01);
+        }
+
+        [Fact]
+        public void TestNoPowerOnLowWeighting()
+        {
+            var algo = new PredictiveAlgorithm(NotVeryImportant);
+            var hrs = algo.PredictHomerunsForYear(2016, NeverHomers);
+            hrs.ShouldBe(0.0, 0.01);
         }
 
 
