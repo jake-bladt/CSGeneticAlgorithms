@@ -77,5 +77,14 @@ namespace HomerPredicter.Tests
             var hrs = algo.PredictHomerunsForYear(2016, Rookie);
             hrs.ShouldBe(20.0, 0.01);
         }
+
+        [Fact]
+        public void TestRookieOnEqualWeighting()
+        {
+            var algo = new PredictiveAlgorithm(EquallyImportant);
+            var hrs = algo.PredictHomerunsForYear(2016, Rookie);
+            hrs.ShouldBe(20.0, 0.01);
+        }
+
     }
 }
