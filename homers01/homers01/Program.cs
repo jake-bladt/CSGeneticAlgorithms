@@ -14,8 +14,8 @@ namespace homers01
 
             var battingReader = new CsvBattingStatsReader();
             var battingStats = battingReader.GetBattingStatistics(battingStatsPath, currentYear, yearsBack);
-            var statCount = battingStats.ToArray().Length;
-            Console.WriteLine(String.Format("{0} stat lines found."), statCount.ToString("#,##0"));
+            var statCount = battingStats.Count;
+            Console.WriteLine(String.Format("{0} stat lines found.", statCount.ToString("#,##0")));
 
             Console.ReadLine();
         }

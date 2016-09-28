@@ -14,7 +14,7 @@ namespace homers01
             var allStats = ParseFile(filePath);
             allStats.ForEach(line =>
             {
-                var lineYear = Int32.Parse(line["yearId"]);
+                var lineYear = Int32.Parse(line["yearID"]);
                 if(lineYear <= mostRecentYear && lineYear >= startYear)
                 {
                     var lineStat = new BattingStatistics
