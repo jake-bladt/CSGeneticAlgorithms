@@ -180,6 +180,38 @@ namespace HomerPredicter.Tests
             hrs.ShouldBe(40.0, 0.01);
         }
 
+        [Fact]
+        public void TestErraticPowerOnSingleYear()
+        {
+            var algo = new PredictiveAlgorithm(OnlyLastYear);
+            var hrs = algo.PredictHomerunsForYear(2016, ErraticPower);
+            hrs.ShouldBe(33.0, 0.01);
+        }
+
+        [Fact]
+        public void TestErraticPowerOnEqualWeighting()
+        {
+            var algo = new PredictiveAlgorithm(EquallyImportant);
+            var hrs = algo.PredictHomerunsForYear(2016, ErraticPower);
+            hrs.ShouldBe(33.0, 0.01);
+        }
+
+        [Fact]
+        public void TestErraticPowerOnPrettyImportant()
+        {
+            var algo = new PredictiveAlgorithm(PrettyImportant);
+            var hrs = algo.PredictHomerunsForYear(2016, ErraticPower);
+            hrs.ShouldBe(33.59, 0.01);
+        }
+
+        [Fact]
+        public void TestErraticPowerOnLowWeighting()
+        {
+            var algo = new PredictiveAlgorithm(NotVeryImportant);
+            var hrs = algo.PredictHomerunsForYear(2016, ErraticPower);
+            hrs.ShouldBe(35.29, 0.01);
+        }
+
 
     }
 }
