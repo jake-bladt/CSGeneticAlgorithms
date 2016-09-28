@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace homers01
+namespace HomerPredicter.StatReaders
 {
     public class BaseLahmanCSVReader
     {
@@ -15,11 +15,11 @@ namespace homers01
             var key = lines[0];
             var headers = key.Split(',');
 
-            for(int i = 1; i < lines.Length; i++)
+            for (int i = 1; i < lines.Length; i++)
             {
                 var stats = lines[i].Split(',');
                 var dict = new Dictionary<String, String>();
-                for(int j = 0; j < stats.Length; j++)
+                for (int j = 0; j < stats.Length; j++)
                 {
                     dict[headers[j]] = stats[j];
                 }

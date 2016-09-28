@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A73BB836-D116-41DA-ACB3-4EB922C83EA4}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{5D64DFA7-ADD2-4E2E-9094-2D6143F36373}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>homers01</RootNamespace>
-    <AssemblyName>homers01</AssemblyName>
+    <RootNamespace>HomerPredicter</RootNamespace>
+    <AssemblyName>HomerPredicter</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,23 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Models\BattingStatistics.cs" />
+    <Compile Include="Models\PlayerBattingStatisticsByYear.cs" />
+    <Compile Include="Models\PlayerInfo.cs" />
+    <Compile Include="Prediction\PredictiveAlgorithm.cs" />
+    <Compile Include="StatManagers\BattingStatisticsManager.cs" />
+    <Compile Include="StatReaders\CsvBattingStatsReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="stats\Batting.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="stats\Master.csv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\HomerPredicter\HomerPredicter.csproj">
-      <Project>{5d64dfa7-add2-4e2e-9094-2d6143f36373}</Project>
-      <Name>HomerPredicter</Name>
-    </ProjectReference>
+    <Compile Include="StatReaders\BaseLahmanCSVReader.cs" />
+    <Compile Include="StatReaders\CsvPlayerReader.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

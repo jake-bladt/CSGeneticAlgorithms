@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace homers01
+using HomerPredicter.Models;
+
+namespace HomerPredicter.StatReaders
 {
     public class CsvBattingStatsReader : BaseLahmanCSVReader
     {
@@ -15,7 +16,7 @@ namespace homers01
             allStats.ForEach(line =>
             {
                 var lineYear = Int32.Parse(line["yearID"]);
-                if(lineYear <= mostRecentYear && lineYear >= startYear)
+                if (lineYear <= mostRecentYear && lineYear >= startYear)
                 {
                     var lineStat = new BattingStatistics
                     {
@@ -29,7 +30,5 @@ namespace homers01
 
             return ret;
         }
-
-
     }
 }

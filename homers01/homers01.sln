@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "homers01", "homers01\homers01.csproj", "{A73BB836-D116-41DA-ACB3-4EB922C83EA4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomerPredicter", "HomerPredicter\HomerPredicter.csproj", "{5D64DFA7-ADD2-4E2E-9094-2D6143F36373}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A73BB836-D116-41DA-ACB3-4EB922C83EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A73BB836-D116-41DA-ACB3-4EB922C83EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A73BB836-D116-41DA-ACB3-4EB922C83EA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D64DFA7-ADD2-4E2E-9094-2D6143F36373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D64DFA7-ADD2-4E2E-9094-2D6143F36373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D64DFA7-ADD2-4E2E-9094-2D6143F36373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D64DFA7-ADD2-4E2E-9094-2D6143F36373}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

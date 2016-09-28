@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Configuration;
 using System.IO;
-using System.Linq;
+
+using HomerPredicter.StatReaders;
+using HomerPredicter.StatManagers;
 
 namespace homers01
 {
