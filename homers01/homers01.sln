@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "homers01", "homers01\homers
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomerPredicter", "HomerPredicter\HomerPredicter.csproj", "{5D64DFA7-ADD2-4E2E-9094-2D6143F36373}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomerPredicter.Tests", "HomerPredicter.Tests\HomerPredicter.Tests.csproj", "{37BB1DC0-9D99-4EF0-B898-745CA499A057}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5D64DFA7-ADD2-4E2E-9094-2D6143F36373}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D64DFA7-ADD2-4E2E-9094-2D6143F36373}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D64DFA7-ADD2-4E2E-9094-2D6143F36373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37BB1DC0-9D99-4EF0-B898-745CA499A057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37BB1DC0-9D99-4EF0-B898-745CA499A057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37BB1DC0-9D99-4EF0-B898-745CA499A057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37BB1DC0-9D99-4EF0-B898-745CA499A057}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
