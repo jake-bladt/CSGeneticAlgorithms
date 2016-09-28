@@ -46,8 +46,11 @@
   <ItemGroup>
     <Compile Include="BaseLahmanCSVReader.cs" />
     <Compile Include="BattingStatistics.cs" />
+    <Compile Include="BattingStatisticsManager.cs" />
     <Compile Include="CsvBattingStatsReader.cs" />
     <Compile Include="CsvPlayerReader.cs" />
+    <Compile Include="PlayerBattingStatisticsByYear.cs" />
+    <Compile Include="PlayerInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
