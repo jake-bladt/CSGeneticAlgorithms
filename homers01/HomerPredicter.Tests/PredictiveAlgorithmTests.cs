@@ -148,6 +148,38 @@ namespace HomerPredicter.Tests
             hrs.ShouldBe(0.0, 0.01);
         }
 
+        [Fact]
+        public void TestSteadyPowerOnSingleYear()
+        {
+            var algo = new PredictiveAlgorithm(OnlyLastYear);
+            var hrs = algo.PredictHomerunsForYear(2016, SteadyPower);
+            hrs.ShouldBe(40.0, 0.01);
+        }
+
+        [Fact]
+        public void TestSteadyPowerOnEqualWeighting()
+        {
+            var algo = new PredictiveAlgorithm(EquallyImportant);
+            var hrs = algo.PredictHomerunsForYear(2016, SteadyPower);
+            hrs.ShouldBe(40.0, 0.01);
+        }
+
+        [Fact]
+        public void TestSteadyPowerOnPrettyImportant()
+        {
+            var algo = new PredictiveAlgorithm(PrettyImportant);
+            var hrs = algo.PredictHomerunsForYear(2016, SteadyPower);
+            hrs.ShouldBe(40.0, 0.01);
+        }
+
+        [Fact]
+        public void TestSteadyPowerOnLowWeighting()
+        {
+            var algo = new PredictiveAlgorithm(NotVeryImportant);
+            var hrs = algo.PredictHomerunsForYear(2016, SteadyPower);
+            hrs.ShouldBe(40.0, 0.01);
+        }
+
 
     }
 }
