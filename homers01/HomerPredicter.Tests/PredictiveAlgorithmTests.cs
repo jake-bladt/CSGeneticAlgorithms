@@ -212,6 +212,37 @@ namespace HomerPredicter.Tests
             hrs.ShouldBe(35.29, 0.01);
         }
 
+        [Fact]
+        public void TestRisingPowerOnSingleYear()
+        {
+            var algo = new PredictiveAlgorithm(OnlyLastYear);
+            var hrs = algo.PredictHomerunsForYear(2016, UpAndComing);
+            hrs.ShouldBe(30.0, 0.01);
+        }
+
+        [Fact]
+        public void TestRisingPowerOnEqualWeighting()
+        {
+            var algo = new PredictiveAlgorithm(EquallyImportant);
+            var hrs = algo.PredictHomerunsForYear(2016, UpAndComing);
+            hrs.ShouldBe(20.0, 0.01);
+        }
+
+        [Fact]
+        public void TestRisingPowerOnPrettyImportant()
+        {
+            var algo = new PredictiveAlgorithm(PrettyImportant);
+            var hrs = algo.PredictHomerunsForYear(2016, UpAndComing);
+            hrs.ShouldBe(20.74, 0.01);
+        }
+
+        [Fact]
+        public void TestRisingPowerOnLowWeighting()
+        {
+            var algo = new PredictiveAlgorithm(NotVeryImportant);
+            var hrs = algo.PredictHomerunsForYear(2016, UpAndComing);
+            hrs.ShouldBe(24.29, 0.01);
+        }
 
     }
 }
