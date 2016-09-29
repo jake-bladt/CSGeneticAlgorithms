@@ -40,9 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Convert\PlayerBattingStatsListToDictionaryConverter.cs" />
+    <Compile Include="Fitness\FitnessTester.cs" />
     <Compile Include="Models\BattingStatistics.cs" />
     <Compile Include="Models\PlayerBattingStatisticsByYear.cs" />
     <Compile Include="Models\PlayerInfo.cs" />
+    <Compile Include="Prediction\AlgorithmRunner.cs" />
     <Compile Include="Prediction\PredictiveAlgorithm.cs" />
     <Compile Include="StatManagers\BattingStatisticsManager.cs" />
     <Compile Include="StatReaders\CsvBattingStatsReader.cs" />
@@ -50,6 +53,7 @@
     <Compile Include="StatReaders\BaseLahmanCSVReader.cs" />
     <Compile Include="StatReaders\CsvPlayerReader.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

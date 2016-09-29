@@ -5,6 +5,9 @@ using System.IO;
 using HomerPredicter.StatReaders;
 using HomerPredicter.StatManagers;
 
+using HomerPredicter.Fitness;
+using HomerPredicter.Prediction;
+
 namespace homers01
 {
     class Program
@@ -22,6 +25,15 @@ namespace homers01
 
             Console.WriteLine(String.Format("{0} stat lines found for {1} players.", 
                 battingStats.Count.ToString("#,##0"), groupedBattingStats.Count.ToString("#,##0")));
+
+            // Create one predicter for testing.
+            var algo = new PredictiveAlgorithm(new double[] { 1.0, 0.5, 0.25 });
+            var runner = new AlgorithmRunner(algo);
+            var hrPredictions = runner.PredictForYear(currentYear, groupedBattingStats);
+
+            var tester = new FitnessTester();
+            var fitness = tester.GetFitness(hrPredictions, groupedBattingStats, currentYear);
+            Console.WriteLine(String.Format("Algorithm is {0}% accurate.", fitness.ToString("#0.00")));
 
             Console.ReadLine();
         }

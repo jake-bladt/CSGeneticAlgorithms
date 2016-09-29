@@ -22,7 +22,7 @@ namespace HomerPredicter.Prediction
             stats.ForEach(stat =>
             {
                 var newHRs = _Algo.PredictHomerunsForYear(year, stat);
-                ret[stat.PlayerInformation.Key] = newHRs;
+                if(!double.IsNaN(newHRs)) ret[stat.PlayerInformation.Key] = newHRs;
             });
 
             return ret;
