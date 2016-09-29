@@ -26,16 +26,17 @@ namespace homers01
             Console.WriteLine(String.Format("{0} stat lines found for {1} players.", 
                 battingStats.Count.ToString("#,##0"), groupedBattingStats.Count.ToString("#,##0")));
 
-            // Create one predicter for testing.
-            var algo = new PredictiveAlgorithm(new double[] { 1.0, 0.5, 0.25 });
-            var runner = new AlgorithmRunner(algo);
-            var hrPredictions = runner.PredictForYear(currentYear, groupedBattingStats);
-
-            var tester = new FitnessTester();
-            var fitness = tester.GetFitness(hrPredictions, groupedBattingStats, currentYear);
-            Console.WriteLine(String.Format("{0} is {1}% accurate.",  algo.ToString(), fitness.ToString("#0.00")));
+            // Test the whole population at 1% intervals.
+            var pop = new Population();
+            var runner = new FitnessTestRunner();
+            runner.Run(groupedBattingStats, currentYear, OutputMessage);
 
             Console.ReadLine();
+        }
+
+        static void OutputMessage(string msg)
+        {
+            Console.WriteLine(msg);
         }
     }
 }

@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Convert\PlayerBattingStatsListToDictionaryConverter.cs" />
     <Compile Include="Fitness\FitnessTester.cs" />
+    <Compile Include="Fitness\FitnessTestRunner.cs" />
     <Compile Include="Models\BattingStatistics.cs" />
     <Compile Include="Models\PlayerBattingStatisticsByYear.cs" />
     <Compile Include="Models\PlayerInfo.cs" />

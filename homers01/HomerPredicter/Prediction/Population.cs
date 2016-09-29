@@ -11,7 +11,7 @@ namespace HomerPredicter.Prediction
             {
                 for(int j = 0; j <= 100; j++)
                 {
-                    var newAlgo = new PredictiveAlgorithm(new double[] { 100.0, i / 100.0, j / 100.0 });
+                    var newAlgo = new PredictiveAlgorithm(new double[] { 100.0, i, j });
                     this.Add(newAlgo);
                 }
             }

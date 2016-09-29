@@ -39,7 +39,7 @@ namespace HomerPredicter.Prediction
             var sb = new StringBuilder();
             for(int i = 0; i < _Weights.Length; i++)
             {
-                sb.Append((_Weights[i] * 100).ToString("##0"));
+                sb.Append(_Weights[i].ToString("##0"));
                 sb.Append("% of year ");
                 sb.Append(i + 1);
                 if(i < _Weights.Length - 1) sb.Append(", ");
