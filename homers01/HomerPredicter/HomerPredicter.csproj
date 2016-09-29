@@ -46,6 +46,7 @@
     <Compile Include="Models\PlayerBattingStatisticsByYear.cs" />
     <Compile Include="Models\PlayerInfo.cs" />
     <Compile Include="Prediction\AlgorithmRunner.cs" />
+    <Compile Include="Prediction\Population.cs" />
     <Compile Include="Prediction\PredictiveAlgorithm.cs" />
     <Compile Include="StatManagers\BattingStatisticsManager.cs" />
     <Compile Include="StatReaders\CsvBattingStatsReader.cs" />

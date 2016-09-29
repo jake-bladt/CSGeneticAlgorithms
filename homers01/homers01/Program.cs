@@ -33,7 +33,7 @@ namespace homers01
 
             var tester = new FitnessTester();
             var fitness = tester.GetFitness(hrPredictions, groupedBattingStats, currentYear);
-            Console.WriteLine(String.Format("Algorithm is {0}% accurate.", fitness.ToString("#0.00")));
+            Console.WriteLine(String.Format("{0} is {1}% accurate.",  algo.ToString(), fitness.ToString("#0.00")));
 
             Console.ReadLine();
         }

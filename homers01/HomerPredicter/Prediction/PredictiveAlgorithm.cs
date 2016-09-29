@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 using HomerPredicter.Models;
 
@@ -31,6 +32,19 @@ namespace HomerPredicter.Prediction
                 }
             }
             return totalEstimate / totalWeight;
+        }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            for(int i = 0; i < _Weights.Length; i++)
+            {
+                sb.Append((_Weights[i] * 100).ToString("##0"));
+                sb.Append("% of year ");
+                sb.Append(i + 1);
+                if(i < _Weights.Length - 1) sb.Append(", ");
+            }
+            return String.Format("Weighted Average: {0}", sb.ToString());
         }
 
     }
